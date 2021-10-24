@@ -74,6 +74,10 @@ public:
         writeBytes(Reg::LEDOUT0, data, sizeof(data));
     }
 
+    void setGroupPWM(const uint8_t vol) {
+        writeByte(Reg::GRPPWM, vol);
+    }
+
     void drive(const uint8_t ch, const uint8_t vol) {
         writeByte(i2c_addr, (uint8_t)Reg::PWM0 + ch, vol);
     }
